@@ -127,16 +127,16 @@ class Covid19StatusSpider(scrapy.Spider):
 
     def extract_new_cases(self, text):
         """
-        TO DO: Query elements to get information about time as well as the number of new cases.
+        TODO: Query elements to get information about time and the number of new cases.
         """
-        # Extract numbers from a string with keyword "CA MAC MOI"
+        # Extract numbers from a string with the keyword "CA MAC MOI"
         pattern = re.compile(r"(\d+) CA MAC MOI", re.IGNORECASE)
         match = pattern.search(text) if isinstance(text, str) else None
         return int(match.group(1)) if match else None
 
     def extract_cities_case_detail(self, text):
         """
-        TO DO: Extract data to know how many new infections each city has
+        TODO: Extract data to know how many new infections each city has
         """
         start_index = text.find("tai")
         if start_index != -1:
