@@ -9,7 +9,7 @@ class Covid19StatusSpider(scrapy.Spider):
     name = "covid19_status"
     allowed_domains = ["web.archive.org"]
     start_urls = [
-        "https://web.archive.org/web/20210907023426/https://ncov.moh.gov.vn/vi/web/guest/dong-thoi-gian"
+        f"https://{allowed_domains}/web/20210907023426/https://ncov.moh.gov.vn/vi/web/guest/dong-thoi-gian"
     ]
 
     cities = [
